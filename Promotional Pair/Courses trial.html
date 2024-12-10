@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College of Information and Computing Studies</title>
+    <link rel="stylesheet" href="style.css">
+    
+ <style>
+        .card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-front {
+  background-color: #fff;
+  color: black;
+}
+
+.card-back {
+  background-color: #333;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <button class="toggle-btn" onclick="toggleMenu()">☰ Menu</button>
+        <h1>College of Information and Computing Studies</h1>
+    </div>
+    
+    <nav class="menu-bar" id="menuBar"><br><br><br>
+        <a href="Promotional App.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Contact.html">Contact</a>
+        <a href="F&S.html">Faculties and Staff</a>
+    </nav>
+
+   <div class="container">
+        <!-- Wrap each card with an anchor tag -->
+        <div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <!-- Front content here -->
+      Front Side
+    </div>
+    <div class="card-back">
+      <!-- Back content here -->
+      Back Side
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 College of Information and Computing Studies. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

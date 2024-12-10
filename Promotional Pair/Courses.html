@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College of Information and Computing Studies</title>
+    
+    <style>
+
+        body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    height: 100%;
+    background-color: #f9f7e8; /* Soft light yellow background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Toggle Button for Navigation */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #b38f00;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    z-index: 4; /* Ensure button stays on top */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #8a6f00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Side Navigation Menu */
+.menu-bar {
+    width: 220px;
+    background-color: #333;
+    position: fixed;
+    left: -220px; /* Hidden initially */
+    top: 0;
+    height: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    transition: left 0.4s ease; /* Smooth transition for sliding */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.menu-bar a:hover {
+    color: #b38f00;
+    padding-left: 10px;
+}
+
+/* Show Menu When Visible */
+.menu-visible {
+    left: 0; /* Move menu into view */
+}
+
+/* Header */
+.header {
+    
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the image within the header */
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem; /* Reduced padding for a smaller header */
+    font-size: 1.4rem; /* Reduced font size */
+    letter-spacing: 1px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    height: 180px; /* Reduced height for a smaller header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Adds text shadow for better visibility */
+}
+
+/* Main Content Area */
+.main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 2rem auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: #b38f00;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: auto;
+    font-size: 0.9rem;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+body {
+    background-image: url('cicsbuilding.png'); /* Add the image path here */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Optional: improves default font appearance */
+}
+
+        .container {
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping */
+            justify-content: center;
+            gap: 40px; /* Add space between cards */
+            padding: 20px;
+            overflow-x: auto; /* Allow horizontal scrolling if necessary */
+        }
+
+        .card, .card1,.card2{
+            width: 350px;
+            height: 400px;
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+        .card-inner, .card1-inner, .card2-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .card-front, .card-back, .card1-front, .card1-back,.card2-front, .card2-back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 2rem;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+        }
+
+        .card-front, .card1-front, .card2-front {
+            background-color: #fff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-back, .card1-back, .card2-back {
+            background-color: #333;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card:hover .card-inner, .card1:hover .card1-inner, .card2:hover .card2-inner {
+            transform: rotateY(180deg);
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <button class="toggle-btn" onclick="toggleMenu()">☰ Menu</button>
+        <h1>College of Information and Computing Studies</h1>
+    </div>
+    
+    <nav class="menu-bar" id="menuBar"><br><br><br>
+        <a href="Promotional App.html">Home</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Contact.html">Contact</a>
+        <a href="F&S.html">Faculties and Staff</a>
+        <a href="activities.html">Activities for Students</a>
+    </nav>
+
+    <div class="container">
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <p>BACHELOR OF SCIENCE <br>IN<br> INFORMATION TECHNOLOGY</p>
+            </div>
+            <div class="card-back">
+                <center>Bachelor of Science in Information Technology</center>
+                <ul>
+                    <li>Web & Mobile Development</li>
+                    <p>The process of creating and maintaining applications for websites and mobile devices to provide interactive and functional user experiences.</p>
+                    <li>Network Security</li>
+                    <p>The practice of protecting networks, systems, and data from cyber threats through policies, tools, and techniques to ensure confidentiality, integrity, and availability.</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card1">
+        <div class="card1-inner">
+            <div class="card1-front">
+                <p>BACHELOR OF SCIENCE <br>IN<br> COMPUTER SCIENCE</p>
+            </div>
+            <div class="card1-back">
+                <center>Bachelor of Science in Computer Science</center>
+           
+                   <ul><li> <P>A degree program that focuses on the study of library management, information organization, and digital resource management. It prepares students to efficiently manage information systems, archives, and libraries, emphasizing cataloging, indexing, research, and the use of modern technologies for information dissemination. </P></li></ul>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="card2">
+        <div class="card2-inner">
+            <div class="card2-front">
+                <p>BACHELOR OF LIBRARY <br>AND<br> INFORMATION SCIENCE</p>
+            </div>
+            <div class="card2-back">
+                <center>Bachelor of Science in Computer Engineering</center>
+             
+                    
+ <ul> <li><p>A degree program centered on the theory, design, development, and application of computer software and systems. It covers areas such as programming, algorithms, data structures, artificial intelligence, and software engineering, preparing students to solve complex computational problems and innovate in technology fields.</p>  </li></ul>           
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="footer">
+        <p>&copy; 2023 College of Information and Computing Studies. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

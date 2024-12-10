@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College of Information and Computing Studies</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <!-- Navigation Toggle Button -->
+    <button class="toggle-btn" id="menuToggle">☰ Menu</button>
+
+    <!-- Side Navigation Menu -->
+    <nav class="menu-bar" id="menuBar"><br><br><br>
+        <a href="Promotional App.html">Home</a>
+        <a href="Courses.html">Courses</a>
+        <a href="Contact.html">Contact</a>
+        <a href="F&S.html">Faculties and Staff</a>
+        <a href="activities.html">Activities for Students</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>College of Information and Computing Studies</h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="main">
+        <div class="content">
+            <h1>Contact</h1>
+            <p>The College of Information and Computing Studies (CICS) is dedicated to providing top-notch education and research opportunities in the field of information technology and computing. Join us to explore the world of technology and innovation.</p>
+            <p>You can contact us through the following:</p>
+            <!-- Contact Information -->
+            <ul>
+                <li>Phone: (033) 397 0314</li>
+                <li>Email: iics@nipsc.edu.ph</li>
+                <li>Address: 123 Main Street, Estancia, Iloilo</li>
+            </ul>
+            <!-- Contact Form -->
+
+            <center><h2>Send a Message</h2>
+            <form id="" ="text">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                 <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2023 College of Information and Computing Studies. All rights reserved.
+    </footer>
+
+<script>
+        document.getElementById('text').addEventListener("submit",function(event) {event.preventDefault();alert("Form Submitted"); 
+                    // body...
+        });
+
+</script>
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
